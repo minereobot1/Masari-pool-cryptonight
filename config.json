@@ -1,18 +1,16 @@
 {
-    "poolHost": "Your pool",
+    "poolHost": "your.pool.host",
 
-    "coin": "Iridium",
-    "symbol": "IRD",
-    "coinUnits": 100000000,
+    "coin": "masari",
+    "symbol": "MSR",
+    "coinUnits": 1000000000000,
     "coinDecimalPlaces": 4,
-    "coinDifficultyTarget": 175,
-    "blockchainExplorer": "http://explorer.ird.cash/",
-    "transactionExporer": "http://explorer.ird.cash/",
+    "coinDifficultyTarget": 60,
 
-    "daemonType": "bytecoin",
-    "cnAlgorithm": "cryptonight_pico",
-    "cnVariant": 2,
-    "cnBlobType": 2,
+    "daemonType": "default",
+    "cnAlgorithm": "cryptonight",
+    "cnVariant": 9,
+    "cnBlobType": 6,
 
     "logging": {
         "files": {
@@ -25,12 +23,11 @@
             "colors": true
         }
     },
-    "childPools": null,
+
     "poolServer": {
         "enabled": true,
-        "mergedMining": false,
         "clusterForks": "auto",
-        "poolAddress": "Your address",
+        "poolAddress": "** Your pool wallet address **",
         "intAddressPrefix": null,
         "blockRefreshInterval": 1000,
         "minerTimeout": 900,
@@ -68,23 +65,23 @@
                 "port": 9999,
                 "difficulty": 20000,
                 "desc": "SSL connection",
-                "ssl": false
+                "ssl": true
             }
         ],
         "varDiff": {
-            "minDiff": 600,
+            "minDiff": 100,
             "maxDiff": 100000000,
-            "targetTime": 60,
+            "targetTime": 120,
             "retargetTime": 30,
             "variancePercent": 30,
             "maxJump": 100
         },
         "paymentId": {
-            "addressSeparator": "+"
+            "addressSeparator": "."
         },
         "fixedDiff": {
             "enabled": true,
-            "addressSeparator": "."
+            "addressSeparator": "+"
         },
         "shareTrust": {
             "enabled": true,
@@ -113,19 +110,19 @@
         "maxAddresses": 50,
         "mixin": 5,
         "priority": 0,
-        "transferFee": 5000000,
+        "transferFee": 5000000000,
         "dynamicTransferFee": true,
         "minerPayFee" : true,
-        "minPayment": 100000000,
+        "minPayment": 1000000000000,
         "maxPayment": null,
         "maxTransactionAmount": 0,
-        "denomination": 10000000
+        "denomination": 100000000000
     },
 
     "blockUnlocker": {
         "enabled": true,
         "interval": 30,
-        "depth": 20,
+        "depth": 60,
         "poolFee": 0.8,
         "devDonation": 0.2,
         "networkFee": 0.0
@@ -133,13 +130,13 @@
 
     "api": {
         "enabled": true,
-        "hashrateWindow": 600,
+        "hashrateWindow": 900,
         "updateInterval": 5,
         "bindIp": "0.0.0.0",
         "port": 8117,
         "blocks": 30,
         "payments": 30,
-        "password": "password",
+        "password": "your_password",
         "ssl": false,
         "sslPort": 8119,
         "sslCert": "./cert.pem",
@@ -150,12 +147,12 @@
 
     "daemon": {
         "host": "127.0.0.1",
-        "port": 13007
+        "port": 38081
     },
 
     "wallet": {
         "host": "127.0.0.1",
-        "port": 13008
+        "port": 38083
     },
 
     "redis": {
@@ -163,7 +160,7 @@
         "port": 6379,
         "auth": null,
         "db": 0,
-        "cleanupInterval": 15
+	"cleanupInterval": 15
     },
 
     "notifications": {
@@ -270,7 +267,7 @@
                 "updateInterval": 60,
                 "stepInterval": 1800,
                 "maximumPeriod": 86400
-            },
+	    },
             "workers": {
                 "enabled": true,
                 "updateInterval": 60,
@@ -319,3 +316,4 @@
         }
     }
 }
+
